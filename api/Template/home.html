@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API DATA </title>
+    <style>
+        h2{
+    text-align: center;
+    color:darkblue;}
+
+table, th,td{
+    border : 1px solid black;
+    border-collapse: collapse;
+    padding: 5px; }
+td {text-align: center;  }
+    </style>
+</head>
+<body>
+    <h2> API DATA </h2>
+    <h3> Channel </h3>
+    <table>
+        <tr>
+            <th> id  </th>
+            <th> name </th>
+            <th> description </th>
+            <th> latitude </th>
+            <th> longitude </th>
+            <th> field1 </th>
+            <th> field2 </th>
+            <th> created_at </th>
+            <th> updated_at </th>
+            <th> last_entry_id </th>
+        </tr>
+        {%for i in cnl%}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.description}}</td>
+                <td>{{i.latitude}}</td>
+                <td>{{i.longitude}}</td>
+                <td>{{i.field1}}</td>
+                <td>{{i.field2 }}</td>
+                <td>{{i.created_at}}</td>
+                <td>{{i.updated_at}}</td>
+                <td>{{i.last_entry_id}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    <br><br>
+    <h3> Feeds </h3>
+    <table>
+    <tr>
+        <th> entry_id  </th>
+        <th> created_at </th>
+        <th> field1 </th>
+        <th> field2 </th>
+    </tr>
+    {%for i in datas%}
+        <tr>
+            <td>{{i.entry_id}}</td>
+            <td>{{i.created_at}}</td>
+            <td>{{i.field1}}</td>
+            <td>{{i.field2}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    </body>
+</html>
